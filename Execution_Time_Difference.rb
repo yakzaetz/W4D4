@@ -37,6 +37,29 @@ require "byebug"
 # list = [ 0, 3, 5, 4, -5, 10, 1, 90 ]
 # p my_min(list)  # =>  -5
 
-def sub_sum(matrix)
-    
+#n^2 + n => n^2
+def sub_sum(arr)
+    new_arr = []
+    (0...arr.length).each do |i|
+        (i...arr.length).each do |i2|
+            new_arr << arr[i..i2]
+        end
+    end 
+   
+    max = new_arr[0]
+    new_arr.each do |sub|
+        max = sub if sub.sum > max.sum
+    end
+    max.sum
+end
+list = [5, 3, -7]
+p sub_sum(list) # => 8
+
+#no sub_sets to get the answer
+#keep track of the largest sum vs cur_sum
+# we can have only one iteration and 
+# check max_sum and cur_sum, from cur_pos + nex_pos = cur_sum check which max_sum or cur_sum is greated, if cur is greater. reassign
+# break the while loop if list.length   
+def sub_sum()
+
 end
