@@ -13,14 +13,14 @@ def my_min(arr)
         end 
     end 
 
-        # (i+1...arr.length).each do |i2|
-        #     # debugger
-        #     if arr[i] < arr[i2]
-        #         min = arr[i]
-        #     else
-        #         min = arr[i2]
-        #     end
-        # end
+    # (i+1...arr.length).each do |i2|
+    #     # debugger
+    #     if arr[i] < arr[i2]
+    #         min = arr[i]
+    #     else
+    #         min = arr[i2]
+    #     end
+    # end
     min
 end
 
