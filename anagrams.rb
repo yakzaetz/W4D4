@@ -21,12 +21,10 @@
 def second_anagram(str1, str2)
     # arr1 = str1.split("")
     # arr2 = str2.split("")
-    return true if str2.empty?  
     str1.each_char.with_index do |char, i|
         #  debugger
-        if char == str2[i]
-            str1 = str1[i + 1..-1] 
-            str2 = str2.delete(char)
+        if str2.include?(char)
+            str2.delete(char)
             #return true if second_anagram(arr1.join(""), arr2.join("")) == nil                       
         end
     end 
