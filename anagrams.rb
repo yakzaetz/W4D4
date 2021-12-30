@@ -17,17 +17,17 @@
 #         end
 #     end
 # end 
-require "byebug"
+# require "byebug"
 def second_anagram(str1, str2)
-    arr1 = str1.split("")
-    arr2 = str2.split("")
-    return nil if str1.empty?  
-    arr1.each.with_index do |char, i|
-        # debugger
-        if char == arr2[i]
-            arr1 = arr1[i + 1..-1] 
-            arr2 = arr2.delete_at(i)
-            return true if second_anagram(arr1.join(""), arr2.join("")) == nil                       
+    # arr1 = str1.split("")
+    # arr2 = str2.split("")
+    return true if str2.empty?  
+    str1.each_char.with_index do |char, i|
+        #  debugger
+        if char == str2[i]
+            str1 = str1[i + 1..-1] 
+            str2 = str2.delete(char)
+            #return true if second_anagram(arr1.join(""), arr2.join("")) == nil                       
         end
     end 
     return false
