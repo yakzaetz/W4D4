@@ -1,11 +1,9 @@
-#complexity n!
+# #complexity n!
 # def anagram?(str1, str2)
 #     permutations(str1.split("")).include?(str2.split)
-#     #     return true if perm.join("") == str2     
-#     # end
-#     # false
-
-
+#         return true if perm.join("") == str2     
+#     end
+#     false
 # end
 
 # def permutations(arr)
@@ -19,23 +17,25 @@
 # end 
 # require "byebug"
 def second_anagram(str1, str2)
-    # arr1 = str1.split("")
-    # arr2 = str2.split("")
+
     str1.each_char.with_index do |char, i|
         #  debugger
         if str2.include?(char)
-            str2.delete(char)
-            #return true if second_anagram(arr1.join(""), arr2.join("")) == nil                       
+            index = str2.index(char)
+            str2 = str2.delete(str2[index])
+            return true if str2.empty?
+        else
+            return false
         end
     end 
-    return false
 end
 
-p second_anagram("gizmo", "sally")
-p second_anagram("elvis", "lives")    #=> true
+# p second_anagram("gizmo", "sally")
+# p second_anagram("elvis", "lives")    #=> true
 
-# p anagram?("gizmo", "sally")    #=> false
-# p anagram?("elvis", "lives")    #=> true
-# p permutations(str)
-# "cat" =< c, ca, cat, at, atc, act, t, ta, tac
-# "cat" => "cat" act, 
+def third_anagram(str1, str2)
+    str1.split("").sort == str2.split("").sort
+end
+
+p third_anagram("gizmo", "sally")
+p third_anagram("elvis", "lives")
